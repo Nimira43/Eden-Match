@@ -5,16 +5,10 @@ C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\API.runtimeconfig.json
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\API.dll
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\API.pdb
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.AssemblyInfo.cs
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.sourcelink.json
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\staticwebassets.build.json
@@ -25,7 +19,6 @@ C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
-C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.csproj.Up2Date
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.dll
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\arimi\Project-8\JavaScript\Neil-Cummings\Angular\Angular-Dotnet-Project\API\obj\Debug\net8.0\API.pdb
