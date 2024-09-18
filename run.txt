@@ -1,0 +1,2 @@
+To run API - dotnet run
+To run frontend - ng serve
