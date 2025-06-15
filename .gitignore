@@ -1,0 +1,50 @@
+# ----- .NET (.NET 8) -----
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dbmdl
+
+# ASP.NET Core generated files
+wwwroot/
+.env
+
+# Entity Framework migrations (optional if generated)
+Migrations/
+
+# ----- Angular -----
+node_modules/
+dist/
+tmp/
+out-tsc/
+.angular/
+.angular-cache/
+npm-debug.log
+yarn-error.log
+.env
+*.tsbuildinfo
+
+# ----- Visual Studio Code -----
+.vscode/
+
+# ----- Windows/macOS -----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ----- Logs -----
+*.log
+logs/
+*.log.*
+
+# ----- Optional: Rider/JetBrains IDE -----
+.idea/
+*.iml
