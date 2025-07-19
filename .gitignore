@@ -1,0 +1,45 @@
+# Root
+*.user
+*.suo
+*.sln.docstates
+*.vs/
+.vscode/
+.idea/
+node_modules/
+dist/
+tmp/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Client (Angular)
+client/node_modules/
+client/dist/
+client/tmp/
+client/.angular/
+client/.env*
+client/.nx/
+
+# API (.NET)
+api/bin/
+api/obj/
+api/*.user
+api/*.suo
+api/*.pdb
+api/*.mdb
+api/*.log
+api/*.vspscc
+api/*.vssscc
+api/*.cache
+api/*.dbmdl
+api/.vs/
+api/appsettings.*.json
+api/Properties/launchSettings.json
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*.swo
