@@ -1,4 +1,5 @@
 using API.Data;
+using API.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +10,11 @@ namespace API.Controllers
     public class MembersController(AppDbContext context) : ControllerBase
     {
         [HttpGet]
-        public ActionResult<List<AppUser>> GetMembers()
+        public ActionResult<IReadOnlyList<AppUser>> GetMembers()
         {
-            
+            var members = context.Users.ToList();
+
+            return members;
         }
     }
 }
