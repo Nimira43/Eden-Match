@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
-
 }
