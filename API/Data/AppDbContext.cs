@@ -1,8 +1,9 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data;
 
-public class AppDbContext
+public class AppDbContext : DbContext
 {
 
 }
