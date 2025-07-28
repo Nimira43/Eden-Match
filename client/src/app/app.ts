@@ -20,4 +20,12 @@ export class App implements OnInit {
       complete: () => console.log('Completed the HTTP request')
     })
   }
+  async getMembers() {
+    try {
+      return this.http.get('https://localhost:5001/api/members')  
+    } catch (error) {
+      console.log(error)
+      throw error
+    }    
+  }
 }
