@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,9 @@ import { Component } from '@angular/core'
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
+  private http = inject(HttpClient)
   protected title = 'Eden Match'
 
   constructor(private http: HttpClient) {}
