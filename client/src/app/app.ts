@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http'
 import { Component } from '@angular/core'
 
 @Component({
@@ -8,4 +9,6 @@ import { Component } from '@angular/core'
 })
 export class App {
   protected title = 'Eden Match'
+
+  constructor(private http: HttpClient) {}
 }
