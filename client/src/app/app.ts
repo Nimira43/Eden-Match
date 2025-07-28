@@ -9,11 +9,10 @@ import { Component, inject, OnInit } from '@angular/core'
 })
 
 export class App implements OnInit {
-  ngOnInit(): void {
-      throw new Error('Method not implemented.')
-  }
   private http = inject(HttpClient)
   protected title = 'Eden Match'
 
-  
+  ngOnInit(): void {
+    this.http.get('https://localhost:5001/api/members')
+  }
 }
