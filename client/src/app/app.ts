@@ -13,6 +13,8 @@ export class App implements OnInit {
   protected title = 'Eden Match'
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/members')
+    this.http.get('https://localhost:5001/api/members').subscribe({
+      next: response => console.log(response)
+    })
   }
 }
