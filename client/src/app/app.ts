@@ -11,6 +11,7 @@ import { Component, inject, OnInit } from '@angular/core'
 export class App implements OnInit {
   private http = inject(HttpClient)
   protected title = 'Eden Match'
+  protected members: any;
 
   ngOnInit(): void {
     this.http.get('https://localhost:5001/api/members').subscribe({
