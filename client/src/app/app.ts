@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Component, inject } from '@angular/core'
+import { Component, inject, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { Component, inject } from '@angular/core'
   styleUrl: './app.css'
 })
 
-export class App {
+export class App implements OnInit {
   private http = inject(HttpClient)
   protected title = 'Eden Match'
 
-  constructor(private http: HttpClient) {}
+  
 }
