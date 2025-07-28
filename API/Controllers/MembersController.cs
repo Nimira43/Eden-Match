@@ -17,7 +17,14 @@ namespace API.Controllers
             return members;
         }
 
-        // [HttpGet("{id}")]
-        // public ActionResult<AppUserm>
+        [HttpGet("{id}")]
+        public ActionResult<AppUser> GetMember(string id)
+        {
+            var member = context.Users.Find(id);
+
+            if (member == null) return NotFound();
+
+            return member;            
+        } 
     }
 }
