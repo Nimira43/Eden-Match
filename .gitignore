@@ -34,7 +34,7 @@ api/*.cache
 api/*.dbmdl
 api/.vs/
 api/appsettings.*.json
-api/appsettings.json
+API/appsettings.json
 api/Properties/launchSettings.json
 
 # OS-specific
