@@ -14,13 +14,10 @@ export class App implements OnInit {
   protected title = 'Eden Match'
   protected members = signal<any>([])
 
-  ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/members').subscribe({
-      next: response => this.members.set(response),
-      error: error => console.log(error),
-      complete: () => console.log('Completed the HTTP request')
-    })
+  async ngOnInit() {
+    this.members.set(await this.getMembers())
   }
+  
   async getMembers() {
     try {
       return lastValueFrom(this.http.get('https://localhost:5001/api/members'))  
