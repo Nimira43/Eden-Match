@@ -14,7 +14,9 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     this.http.get('https://localhost:5001/api/members').subscribe({
-      next: response => console.log(response)
+      next: response => console.log(response),
+      error: error => console.log(error),
+      complete: () => console.log('Completed the HTTP request')
     })
   }
 }
