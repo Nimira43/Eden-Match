@@ -1,21 +1,21 @@
 <div class="card bg-light w-1/2 mx-auto p-10 mt-10 shadow-xl">
   <h3 class="text-3xl text-main logo-font text-center">{{title}}</h3>
-  <u class="list">
+  <ul class="list">
     @for (member of members(); track member.id) {
       <li
-        class="list-row items-center"
+        class="list-row items-center flex"
       >
         <img 
           src="/user.png" 
-          alt="User"
-          class="size-12 rounded-box"
+          alt="user avatar"
+          class="size-12 rounded-box mr-6"
         >
         <div>
           {{member.displayName}}
         </div>
       </li>
     }
-  </u>
+  </ul>
 </div>
 
 
