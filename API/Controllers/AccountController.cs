@@ -23,6 +23,6 @@ public class AccountController(AppDbContext context) : BaseApiController
     };
     context.Users.Add(user);
     await context.SaveChangesAsync();
-    return user
+    return user;
   } 
 }
