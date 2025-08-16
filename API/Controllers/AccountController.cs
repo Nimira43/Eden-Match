@@ -1,8 +1,9 @@
 using System;
+using API.Data;
 
 namespace API.Controllers;
 
-public class AccountController: BaseApiController
+public class AccountController(AppDbContext context): BaseApiController
 {
 
 }
