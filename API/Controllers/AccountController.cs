@@ -17,9 +17,9 @@ public class AccountController(AppDbContext context) : BaseApiController
 
     var user = new AppUser
     {
-      DisplayName = displayName,
-      Email = email,
-      PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+      DisplayName = registerDto.DisplayName,
+      Email = registerDto.Email,
+      PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
       PasswordSalt = hmac.Key
     };
     context.Users.Add(user);
