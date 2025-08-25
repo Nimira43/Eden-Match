@@ -14,6 +14,8 @@ public class AccountController(AppDbContext context) : BaseApiController
   [HttpPost("register")]
   public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
   {
+    if ( await EmailExists(registerDto.Email)) return BadRequest("Email taken");
+
     using var hmac = new HMACSHA512();
 
     var user = new AppUser
