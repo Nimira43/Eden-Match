@@ -34,6 +34,8 @@ public class AccountController(AppDbContext context) : BaseApiController
   public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
   {
     var user = await context.Users.SingleOrDefaultAsync(x => x.Email == loginDto.Email);
+
+    if (user == null) return Unauthorized("Invalid email address.");
   }
 
   private async Task<bool> EmailExists(string email)
