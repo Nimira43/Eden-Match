@@ -30,6 +30,12 @@ public class AccountController(AppDbContext context) : BaseApiController
     return user;
   }
 
+  [HttpPost("login")]
+  public async Task<ActionResult<AppUser>> Login()
+  {
+    
+  }
+
   private async Task<bool> EmailExists(string email)
   {
     return await context.Users.AnyAsync(x => x.Email.ToLower() == email.ToLower());
