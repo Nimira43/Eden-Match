@@ -36,6 +36,8 @@ public class AccountController(AppDbContext context) : BaseApiController
     var user = await context.Users.SingleOrDefaultAsync(x => x.Email == loginDto.Email);
 
     if (user == null) return Unauthorized("Invalid email address.");
+
+    using var hmac = new HMACSHA512(user.PasswordSalt);
   }
 
   private async Task<bool> EmailExists(string email)
