@@ -1,5 +1,6 @@
 using System;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using API.Data;
 using API.DTOs;
@@ -38,6 +39,12 @@ public class AccountController(AppDbContext context) : BaseApiController
     if (user == null) return Unauthorized("Invalid email address.");
 
     using var hmac = new HMACSHA512(user.PasswordSalt);
+    var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+    for (var i = 0; i < computedHash.Length; i++)
+    {
+      if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password.");
+    }
   }
 
   private async Task<bool> EmailExists(string email)
