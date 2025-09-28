@@ -1,3 +1,4 @@
+using System.Text;
 using API.Data;
 using API.Interfaces;
 using API.Services;
@@ -21,7 +22,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
       ?? throw new Exception("Token key not found - Program.cs");
     options.TokenValidationParameters = new TokenValidationParameters
     {
-
+      ValidateIssuerSigningKey = true, 
+      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey)),
     };
   });
 
