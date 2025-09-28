@@ -33,5 +33,7 @@ public class TokenService(IConfiguration config) : ITokenService
 
     var tokenHandler = new JwtSecurityTokenHandler();
     var token = tokenHandler.CreateToken(tokenDescriptor);
+
+    return tokenHandler.WriteToken(token);
   }
 }
