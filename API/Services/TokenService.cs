@@ -3,10 +3,10 @@ using API.Interfaces;
 
 namespace API.Services;
 
-public class TokenService : ITokenService
+public class TokenService(IConfiguration config) : ITokenService
 {
   public string CreateToken(AppUser user)
   {
-    throw new NotImplementedException();
+    var tokenKey =
   }
 }
