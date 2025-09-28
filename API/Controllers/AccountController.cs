@@ -26,6 +26,7 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
       PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
       PasswordSalt = hmac.Key
     };
+    
     context.Users.Add(user);
     await context.SaveChangesAsync();
 
