@@ -3,6 +3,7 @@ using API.Interfaces;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +17,13 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
   .AddJwtBearer(options =>
   {
-    var tokenKey = builder.Configuration["TokenKey"] ?? throw new Exception("Token key not found - Program.cs");
-  });
+    var tokenKey = builder.Configuration["TokenKey"]
+      ?? throw new Exception("Token key not found - Program.cs");
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
 
+    };
+  });
 
 var app = builder.Build();
 
