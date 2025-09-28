@@ -7,6 +7,6 @@ public class TokenService(IConfiguration config) : ITokenService
 {
   public string CreateToken(AppUser user)
   {
-    var tokenKey =
+    var tokenKey = config["TokenKey"];
   }
 }
