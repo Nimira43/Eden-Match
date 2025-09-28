@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using API.Entities;
@@ -29,5 +30,8 @@ public class TokenService(IConfiguration config) : ITokenService
       Expires = DateTime.UtcNow.AddDays(7),
       SigningCredentials = creds
     };
+
+    var tokenHandler = new JwtSecurityTokenHandler();
+    var token = tokenHandler.CreateToken(tokenDescriptor);
   }
 }
