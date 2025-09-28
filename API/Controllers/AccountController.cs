@@ -32,7 +32,7 @@ public class AccountController(AppDbContext context) : BaseApiController
   }
 
   [HttpPost("login")]
-  public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+  public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
   {
     var user = await context.Users.SingleOrDefaultAsync(x => x.Email == loginDto.Email);
 
