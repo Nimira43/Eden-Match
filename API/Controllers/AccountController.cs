@@ -28,7 +28,14 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
     };
     context.Users.Add(user);
     await context.SaveChangesAsync();
-    return user;
+
+    return new UserDto
+    {
+      Id = user.Id,
+      DisplayName = user.DisplayName,
+      Email = user.Email,
+      Token = tokenService.CreateToken(user)
+    };
   }
 
   [HttpPost("login")]
