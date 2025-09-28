@@ -22,5 +22,11 @@ public class TokenService(IConfiguration config) : ITokenService
     };
 
     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+    var tokenDescriptor = new SecurityTokenDescriptor
+    {
+      Subject = new ClaimsIdentity(claims),
+      Expires = DateTime.UtcNow.AddDays(7),
+    }
   }
 }
