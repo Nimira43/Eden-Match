@@ -1,16 +1,16 @@
 using System;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-public class AccountController(AppDbContext context) : BaseApiController
+public class AccountController(AppDbContext context, ITokenService tokenService) : BaseApiController
 {
   [HttpPost("register")]
   public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
@@ -51,7 +51,8 @@ public class AccountController(AppDbContext context) : BaseApiController
       Id = user.Id,
       DisplayName = user.DisplayName,
       Email = user.Email,
-    }
+      Token = tokenService.CreateToken(user)
+    };
   }
 
   private async Task<bool> EmailExists(string email)
