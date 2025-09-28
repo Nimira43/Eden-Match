@@ -6,10 +6,46 @@
     >
       Eden Match
     </a>
-    <nav class='flex gap-3 my-2 uppercase text-lg text-main'>
-      <a href=''>Matches</a>
-      <a href=''>Lists</a>
-      <a href=''>Messages</a>
+    <nav class='flex gap-3 my-2 uppercase text-lg text-grey-medium font-medium'>
+      <a 
+        class='hover:text-main hover-transition'
+        href=''
+      >
+        Matches
+      </a>
+      <a 
+        class='hover:text-main hover-transition'
+        href=''
+      >
+        Lists
+      </a>
+      <a 
+        class='hover:text-main hover-transition'
+        href=''
+      >
+        Messages
+      </a>
     </nav>
+    <div class='flex align-middle ml-auto gap-3'>
+      <form
+        class='flex items-center gap-3'
+      >
+        <input 
+          type='text'
+          class='input focus:border-main hover-transition'
+          placeholder='Email'
+        >
+        <input 
+          type='password'
+          class='input focus:border-main hover-transition'
+          placeholder='Password'
+        >
+        <button
+          class='btn text-light bg-grey-medium hover:bg-main uppercase hover-transition'
+        >
+          Login
+        </button>
+      </form>
+    </div>
   </div>
 </header>
