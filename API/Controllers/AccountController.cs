@@ -46,7 +46,12 @@ public class AccountController(AppDbContext context) : BaseApiController
       if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password.");
     }
 
-    return user;
+    return new UserDto
+    {
+      Id = user.Id,
+      DisplayName = user.DisplayName,
+      Email = user.Email,
+    }
   }
 
   private async Task<bool> EmailExists(string email)
