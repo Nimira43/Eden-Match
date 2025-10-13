@@ -35,16 +35,21 @@
         class='flex items-center gap-3'
       >
         <input 
+          [(ngModel)]="creds.email"
+          name="email"
           type='text'
           class='input focus:border-main hover-transition'
           placeholder='Email'
         >
         <input 
+          [(ngModel)]="creds.password"
+          name="password"
           type='password'
           class='input focus:border-main hover-transition'
           placeholder='Password'
         >
         <button
+          type="submit"
           class='btn text-light bg-grey-medium hover:bg-main uppercase hover-transition'
         >
           Login
