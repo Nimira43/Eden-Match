@@ -9,10 +9,13 @@ import { AccountService } from '../../core/services/account-service'
   styleUrl: './nav.css'
 })
 export class Nav {
-  private account = inject(AccountService)
+  private accountService = inject(AccountService)
   protected creds: any = {}
 
   login() {
-    console.log(this.creds)
+    this.accountService.login(this.creds).subscribe({
+      next: result => console.log(result),
+      error: error => alert(error.message)
+    })
   }
 }
