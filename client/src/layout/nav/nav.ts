@@ -23,6 +23,7 @@ export class Nav {
     })
   }
   logout() {
+    console.log('Logging out...')
     this.loggedIn.set(false)
   }
 }
