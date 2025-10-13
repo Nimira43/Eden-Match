@@ -15,8 +15,14 @@ export class Nav {
 
   login() {
     this.accountService.login(this.creds).subscribe({
-      next: result => console.log(result),
+      next: result => {
+        console.log(result)
+        this.loggedIn.set(true)
+      },
       error: error => alert(error.message)
     })
+  }
+  logout() {
+    this.loggedIn.set(false)
   }
 }
