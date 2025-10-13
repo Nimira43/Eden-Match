@@ -7,5 +7,9 @@ import { Component } from '@angular/core'
   styleUrl: './nav.css'
 })
 export class Nav {
+  protected creds: any = {}
 
+  login() {
+    console.log(this.creds)
+  }
 }
