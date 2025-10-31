@@ -6,7 +6,7 @@ import { inject, Injectable, signal } from '@angular/core'
 })
 export class AccountService {
   private http = inject(HttpClient)
-  currentUser =signal<any>
+  currentUser =signal<any>(null)
 
   baseUrl = 'https://localhost:5001/api/'
 
