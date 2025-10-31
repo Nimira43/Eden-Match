@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http'
-import { inject, Injectable } from '@angular/core'
+import { inject, Injectable, signal } from '@angular/core'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
   private http = inject(HttpClient)
+  currentUser =signal<any>
 
   baseUrl = 'https://localhost:5001/api/'
 
