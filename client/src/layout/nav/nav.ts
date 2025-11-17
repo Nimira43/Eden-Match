@@ -11,7 +11,7 @@ import { AccountService } from '../../core/services/account-service'
 export class Nav {
   private accountService = inject(AccountService)
   protected creds: any = {}
-  protected loggedIn = signal(false)
+
 
   login() {
     this.accountService.login(this.creds).subscribe({
