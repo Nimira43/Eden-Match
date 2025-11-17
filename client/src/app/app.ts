@@ -26,7 +26,7 @@ export class App implements OnInit {
 
     if (!userString) return
 
-    
+    const user = JSON.parse(userString)
   }
 
   async getMembers() {
