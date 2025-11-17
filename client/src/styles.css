@@ -19,10 +19,22 @@ input:active {
 }
 
 button {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 
 .hover-transition {
   transition: all 0.5s ease-in-out;
+}
+
+.dark-button {
+  @apply font-medium bg-main-dark text-light uppercase hover:bg-main-dark/80 hover-transition;
+}
+
+.light-button {
+  @apply font-medium bg-main-light text-main-dark uppercase hover:bg-main-light/80 hover:text-main hover-transition;
+}
+
+.nav-link {
+  @apply hover:text-main font-medium hover-transition;
 }
 

@@ -22,19 +22,19 @@
     </a>
     <nav class='flex gap-3 my-2 uppercase text-lg text-main-dark font-medium'>
       <a 
-        class='hover:text-main font-medium hover-transition'
+        class='nav-link'
         href=''
       >
         Matches
       </a>
       <a 
-        class='hover:text-main font-medium hover-transition'
+        class='nav-link'
         href=''
       >
         Lists
       </a>
       <a 
-        class='hover:text-main font-medium hover-transition'
+        class='nav-link'
         href=''
       >
         Messages
@@ -73,19 +73,19 @@
             [(ngModel)]="creds.email"
             name="email"
             type='text'
-            class='input focus:border-main hover-transition'
+            class='input focus:border-main-dark hover-transition'
             placeholder='Email'
           >
           <input 
             [(ngModel)]="creds.password"
             name="password"
             type='password'
-            class='input focus:border-main hover-transition'
+            class='input focus:border-main-dark hover-transition'
             placeholder='Password'
           >
           <button
             type="submit"
-            class='font-medium btn bg-main-dark text-light uppercase hover:bg-main-dark/80 hover-transition'
+            class='btn dark-button'
           >
             Login
           </button>
