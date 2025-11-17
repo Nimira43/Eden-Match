@@ -4,14 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'main': '#ff4500',
-        'support': '#008080',
-        'dark': '#111',
-        'light': '#fffcfa',
-        'grey-dark': '#333',
-        'grey-medium': '#777',
-        'grey-light': '#ccc',
-        'grey-light-extra': '#eee',
+        'main': '#0380a7',
+				'main-dark': '#00005c',
+				'main-light': '#a7cbfd',
+				'support': '#ffd700',
+				'dark': '#111',
+				'light': '#fffdfa',
+				'grey-1': '#333',
+				'grey-2': '#999',
+				'grey-3': '#ccc',
+				'grey-4': '#eee',
       }
     },
   },
