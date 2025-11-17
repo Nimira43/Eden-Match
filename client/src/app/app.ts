@@ -27,6 +27,7 @@ export class App implements OnInit {
     if (!userString) return
 
     const user = JSON.parse(userString)
+    this.accountService.currentUser.set(user)
   }
 
   async getMembers() {
