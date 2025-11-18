@@ -8,4 +8,8 @@ import { Component, signal } from '@angular/core'
 })
 export class Home {
   protected registerMode = signal(false)
+
+  showRegister() {
+    this.registerMode.set(true)
+  }
 }
