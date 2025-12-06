@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { FormsModule } from '@angular/forms';
+import { RegisterCreds } from '../../../types/user';
 
 @Component({
   selector: 'app-register',
@@ -8,5 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.css'
 })
 export class Register {
+  protected creds = {} as RegisterCreds
 
+  register() {
+    console.log(this.creds)
+  }
 }
