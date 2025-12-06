@@ -14,4 +14,8 @@ export class Register {
   register() {
     console.log(this.creds)
   }
+
+  cancel() {
+    console.log('cancelled')
+  }
 }
