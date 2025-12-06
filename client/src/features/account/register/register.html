@@ -1,3 +1,20 @@
 <div class="card bg-light w-1/2 mx-auto flex flex-col p-6 rounded shadow-lg">
-  <div class="'card-title justify-center text-3xl text-main">Register</div>
+  <div class="card-title justify-center text-3xl text-main">
+    Register
+  </div>
+  <div class="card-body w-full">
+    <form 
+      #registerForm="ngForm"
+      class="flex flex-col gap-4w-full"
+      (ngSubmit)="register()"
+    >
+      <input 
+        type="text"
+        class="input w-full"
+        name="email"
+        [(ngModel)]="creds.email"
+      
+      />
+  </form>
+  </div>
 </div>
