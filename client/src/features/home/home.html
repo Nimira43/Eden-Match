@@ -20,11 +20,11 @@
         <p class="py-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, architecto.</p>
         <div class="flex items-center mt-5 gap-3">
           <button 
-            (click)="showRegister()"
+            (click)="showRegister(true)"
             class="btn dark-button"
           >
             Register
-          </button>
+          </button>   
           <button class="btn light-button">Learn More</button>
         </div>
       </div>
@@ -32,8 +32,8 @@
     } @else {
       <div class="w-full text-2xl text-center flex justify-center">
         <app-register 
-          [membersFromHome]="membersFromApp"
           class="w-full" 
+          (cancelRegister)="showRegister($event)"
         />
       </div>
     }
