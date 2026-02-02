@@ -2,20 +2,22 @@
   <div class='flex align-middle items-center px-10 mx-auto gap-6'>
     <a 
       class='flex items-center max-h-16 text-main-dark border-r-main border-r-2 pr-6 gap-3'
-      href=''
+      routerLink='/'
+      routerLinkActive='text-light'
+      [routerLinkActiveOptions] = '{exact: true}'
     >
       <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke-width="1.5" 
-        stroke="currentColor" 
-        class="size-6 text-main-dark"
+        xmlns='http://www.w3.org/2000/svg' 
+        fill='none' 
+        viewBox='0 0 24 24' 
+        stroke-width='1.5' 
+        stroke='currentColor' 
+        class='size-6 '
       >
         <path 
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" 
+          stroke-linecap='round' 
+          stroke-linejoin='round' 
+          d='M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z' 
           />
       </svg>
       <h3 class='logo-font text-2xl'>Eden Match</h3>   
@@ -23,42 +25,45 @@
     <nav class='flex gap-3 my-2 uppercase text-lg text-main-dark font-medium'>
       <a 
         class='nav-link'
-        href=''
+        routerLink='/members'
+        routerLinkActive='text-light'
       >
         Matches
       </a>
       <a 
         class='nav-link'
-        href=''
+        routerLink='/lists'
+        routerLinkActive='text-light'
       >
         Lists
       </a>
       <a 
         class='nav-link'
-        href=''
+        routerLink='/messages'
+        routerLinkActive='text-light'
       >
         Messages
       </a>
     </nav>
     <div class='flex align-middle ml-auto gap-3'>
       @if (accountService.currentUser(); as user) {
-        <div class="dropdown dropdown-end ">
+        <div class='dropdown dropdown-end '>
           <div
-            tabindex="0"
-            role="button" 
-            class="flex items-center text-xl gap-3 cursor-pointer" 
+            tabindex='0'
+            role='button' 
+            class='flex items-center text-xl gap-3 cursor-pointer' 
           >
             <img 
-              src="/user.png" 
-              alt="user"
-              class="w-8 h-8 rounded-full"
+              src='/user.png' 
+              alt='user'
+              class='w-8 h-8 rounded-full'
             >
-            <span class="font-medium text-main-dark">{{user.displayName}}</span>
+            <span class='font-medium text-main-dark'>{{user.displayName}}</span>
           </div>
-          <ul class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+          <ul class='dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm'>
             <li><a>Edit Profile</a></li>
             <li>
-              <button (click)="logout()">
+              <button (click)='logout()'>
                 Logout
               </button>
             </li>
@@ -66,25 +71,25 @@
         </div>
       } @else {
         <form
-          #loginForm="ngForm" (ngSubmit)="login()"
+          #loginForm='ngForm' (ngSubmit)='login()'
           class='flex items-center gap-3'
         >
           <input 
-            [(ngModel)]="creds.email"
-            name="email"
+            [(ngModel)]='creds.email'
+            name='email'
             type='text'
             class='input focus:border-main-dark hover-transition'
             placeholder='Email'
           >
           <input 
-            [(ngModel)]="creds.password"
-            name="password"
+            [(ngModel)]='creds.password'
+            name='password'
             type='password'
             class='input focus:border-main-dark hover-transition'
             placeholder='Password'
           >
           <button
-            type="submit"
+            type='submit'
             class='btn dark-button'
           >
             Login

@@ -19,7 +19,7 @@ export const routes: Routes = [
     component: MemberDetailed
   },
   {
-    path: 'list',
+    path: 'lists',
     component: Lists
   },
   {
