@@ -12,7 +12,7 @@ export class ToastService {
     if (!document.getElementById('toast-container')) {
       const container = document.createElement('div')
       container.id = 'toast-container'
-      container.id = 'toast toast-bottom toast-end'
+      container.className = 'toast toast-bottom toast-end'
       document.body.appendChild(container)
     }
   }
@@ -44,5 +44,21 @@ export class ToastService {
         toastContainer.removeChild(toast)
       }
     }, duration)
+  }
+
+  success(message: string, duration?: number) {
+    this.createToastElement(message, 'alert-success', duration)
+  }
+  
+  error(message: string, duration?: number) {
+    this.createToastElement(message, 'alert-error', duration)
+  }
+  
+  warning(message: string, duration?: number) {
+    this.createToastElement(message, 'alert-warning', duration)
+  }
+  
+  info(message: string, duration?: number) {
+    this.createToastElement(message, 'alert-info', duration)
   }
 }
