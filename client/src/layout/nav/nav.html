@@ -23,27 +23,29 @@
       <h3 class='logo-font text-2xl'>Eden Match</h3>   
     </a>
     <nav class='flex gap-3 my-2 uppercase text-lg text-main-dark font-medium'>
-      <a 
-        class='nav-link'
-        routerLink='/members'
-        routerLinkActive='text-light'
-      >
-        Matches
-      </a>
-      <a 
-        class='nav-link'
-        routerLink='/lists'
-        routerLinkActive='text-light'
-      >
-        Lists
-      </a>
-      <a 
-        class='nav-link'
-        routerLink='/messages'
-        routerLinkActive='text-light'
-      >
-        Messages
-      </a>
+      @if (accountService.currentUser()) {      
+        <a 
+          class='nav-link'
+          routerLink='/members'
+          routerLinkActive='text-light'
+        >
+          Matches
+        </a>
+        <a 
+          class='nav-link'
+          routerLink='/lists'
+          routerLinkActive='text-light'
+        >
+          Lists
+        </a>
+        <a 
+          class='nav-link'
+          routerLink='/messages'
+          routerLinkActive='text-light'
+        >
+          Messages
+        </a>
+      }
     </nav>
     <div class='flex align-middle ml-auto gap-3'>
       @if (accountService.currentUser(); as user) {
