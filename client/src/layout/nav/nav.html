@@ -63,9 +63,9 @@
             class='flex items-center text-xl gap-3 cursor-pointer' 
           >
             <img 
-              src='/user.png' 
+              [src]="user?.imageUrl || '/user.png'" 
               alt='user'
-              class='w-8 h-8 rounded-full'
+              class='w-10 h-10 rounded-full'
             >
             <span class='font-medium text-main-dark'>{{user.displayName}}</span>
           </div>
