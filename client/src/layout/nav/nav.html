@@ -71,11 +71,15 @@
             <span class='font-medium text-main-dark'>{{user.displayName}}</span>
           </div>
           <ul class='dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm'>
-            <li><a>Edit Profile</a></li>
             <li>
-              <button (click)='logout()'>
+              <a routerLink="/members/{{user.id}}">
+                Edit Profile
+              </a>
+            </li>
+            <li>
+              <Button (click)='logout()'>
                 Logout
-              </button>
+              </Button>
             </li>
           </ul>
         </div>

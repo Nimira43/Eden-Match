@@ -19,8 +19,64 @@
     <h3 class="text-lg font-medium text-primary">
       About {{member.displayName}}
     </h3>
-    <div>
-      {{member.description}}
-    </div>
+    @if (memberService.editMode()) {
+      <form 
+        #editForm="ngForm" 
+        (ngSubmit)="updateProfile()"
+        class="flex flex-col w-full mt-4 gap-2"  
+      >
+          <h1 class="text-lg text-dark font-medium mb-2">Edit Profile</h1>
+          <label class="font-medium text-sm">
+            Display Name
+          </label>
+          <input 
+            class="input-field" 
+            name="displayName" 
+            [(ngModel)]="editableMember.displayName" 
+            placeholder="Display name"
+          >
+          <label class="font-medium text-sm">
+            Description
+          </label>
+          <textarea 
+            class="input-field" 
+            name="description" 
+            [(ngModel)]="editableMember.description" 
+            placeholder="Description"
+          ></textarea>
+          
+          <label class="font-medium text-sm">
+            City
+          </label>
+          <input 
+            class="input-field" 
+            name="city" 
+            [(ngModel)]="editableMember.city" 
+            placeholder="City"
+          >
+          
+          <label class="font-medium text-sm">
+            Country
+          </label>
+          <input 
+            class="input-field" 
+            name="country" 
+            [(ngModel)]="editableMember.country" 
+            placeholder="Country"
+          >
+          <div class="flex self-end">
+            <button
+              type="submit"
+              class="btn dark-button"
+            >
+              Submit
+            </button>
+          </div>
+      </form>
+    } @else {
+      <div>
+        {{member.description}}
+      </div>
+    }
   </div>
 } 

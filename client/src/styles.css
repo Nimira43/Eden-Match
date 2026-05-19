@@ -13,6 +13,8 @@
   font-family: 'Caveat Brush', cursive;
 }
 
+textarea:focus,
+textarea:active,
 input:focus,
 input:active {
   outline: none !important;
@@ -27,15 +29,19 @@ button {
 }
 
 .input-field {
-  @apply w-full border border-grey-3 hover:border-grey-1 hover-transition 
+  @apply w-full px-3 py-2 rounded border border-main-light  hover:border-main hover-transition
 }
 
 .dark-button {
-  @apply font-medium bg-main-dark text-light uppercase hover:bg-main-dark/80 hover-transition;
+  @apply font-medium bg-main-dark rounded text-light uppercase hover:bg-main-dark/80 hover-transition;
+}
+
+.outline-button {
+  @apply font-medium text-main-dark bg-transparent rounded border-main-dark uppercase hover:border-main hover:text-main hover:bg-transparent hover-transition;
 }
 
 .light-button {
-  @apply font-medium bg-main-light text-main-dark uppercase hover:bg-main-light/80 hover:text-main hover-transition;
+  @apply font-medium bg-main-light rounded text-main-dark uppercase hover:border-main-light/80 hover:text-main hover-transition;
 }
 
 .nav-link {
