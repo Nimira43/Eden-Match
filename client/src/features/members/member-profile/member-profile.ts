@@ -1,5 +1,5 @@
 import { MemberService } from './../../../core/services/member-service'
-import { Component, inject, OnDestroy, OnInit, signal, ViewChild } from '@angular/core'
+import { Component, HostListener, inject, OnDestroy, OnInit, signal, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { EditableMember, Member } from '../../../types/members'
 import { DatePipe } from '@angular/common'
@@ -13,8 +13,14 @@ import { ToastService } from '../../../core/services/toast-service'
   styleUrl: './member-profile.css'
 })
 export class MemberProfile implements OnInit, OnDestroy {
-  
   @ViewChild('editForm') editForm?: NgForm
+  
+  @HostListener('window:beforeunload', ['$event']) notify($event: BeforeUnloadEvent) {
+    if (this.editForm?.dirty) {
+      $event.preventDefault()
+    }
+  }
+
   private route = inject(ActivatedRoute)
   private toast = inject(ToastService)
   protected memberService = inject(MemberService)
