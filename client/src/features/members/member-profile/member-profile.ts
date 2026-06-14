@@ -1,10 +1,10 @@
 import { MemberService } from './../../../core/services/member-service'
 import { Component, HostListener, inject, OnDestroy, OnInit, signal, ViewChild } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
 import { EditableMember, Member } from '../../../types/members'
 import { DatePipe } from '@angular/common'
 import { FormsModule, NgForm } from '@angular/forms'
 import { ToastService } from '../../../core/services/toast-service'
+import { AccountService } from '../../../core/services/account-service'
 
 @Component({
   selector: 'app-member-profile',
@@ -21,8 +21,9 @@ export class MemberProfile implements OnInit, OnDestroy {
     }
   }
 
-  private toast = inject(ToastService)
+  private accountService = inject(AccountService)
   protected memberService = inject(MemberService)
+  private toast = inject(ToastService)
   protected editableMember: EditableMember = {
     displayName: '',
     description: '',
@@ -49,6 +50,13 @@ export class MemberProfile implements OnInit, OnDestroy {
 
     this.memberService.updateMember(this.editableMember).subscribe({
       next: () => {
+        const currentUser = this.accountService.currentUser()
+
+        if (currentUser && updatedMember.displayName !== currentUser.displayName) {
+          currentUser.displayName = updatedMember.displayName
+          this.accountService.setCurrentUser(currentUser)
+        }
+
         this.toast.success('Profile updated successfully.')
         this.memberService.editMode.set(false)
         this.memberService.member.set(updatedMember as Member)

@@ -66,6 +66,7 @@
           >
           <div class="flex self-end">
             <button
+              [disabled]="!editForm.dirty"
               type="submit"
               class="btn dark-button"
             >
