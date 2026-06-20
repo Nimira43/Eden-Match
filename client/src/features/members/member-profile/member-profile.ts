@@ -21,6 +21,7 @@ export class MemberProfile implements OnInit, OnDestroy {
     }
   }
 
+  
   private accountService = inject(AccountService)
   protected memberService = inject(MemberService)
   private toast = inject(ToastService)
