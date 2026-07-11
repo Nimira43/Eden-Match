@@ -37,7 +37,7 @@ button {
 }
 
 .outline-button {
-  @apply font-medium text-main-dark bg-transparent rounded border-main-dark uppercase hover:border-main hover:text-main hover:bg-transparent hover-transition;
+  @apply font-medium text-main-dark bg-transparent rounded border border-main-dark uppercase hover:border-main hover:text-main hover:bg-transparent hover-transition;
 }
 
 .light-button {

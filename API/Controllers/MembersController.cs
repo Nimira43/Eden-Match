@@ -83,7 +83,7 @@ namespace API.Controllers
 
             if (await memberRepository.SaveAllAsync()) return photo;
 
-            return BadRequest("Problem adding photo");
+            return BadRequest("Problem adding photo.");
         }
     }
 }
