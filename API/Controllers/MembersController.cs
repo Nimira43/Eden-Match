@@ -105,7 +105,7 @@ namespace API.Controllers
 
             if (await memberRepository.SaveAllAsync()) return NoContent();
 
-            return BadRequest("Problem setting main photo");
+            return BadRequest("Problem setting main photo.");
 
         }
     }
