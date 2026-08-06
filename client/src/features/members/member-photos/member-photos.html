@@ -9,11 +9,19 @@
               alt="Photo of Member"
               class="w-full rounded-lg"
             >
-            <app-star-button 
+            @if (accountService.currentUser()?.id === memberService.member()?.id) {
+              <app-star-button 
               [disabled]="photo.url === memberService.member()?.imageUrl"            
               [selected]="photo.url === memberService.member()?.imageUrl"
-              (clickEvent)="setMainPhoto(photo)"            
-            />
+              (clickEvent)="setMainPhoto(photo)"   
+              class="absolute top-1 right-1"         
+              />
+              <app-delete-button 
+                [disabled]="photo.url === memberService.member()?.imageUrl"            
+                (clickEvent)="deletePhoto(photo.id)"
+                class="absolute top-1 left-1"
+              />
+            }
           </div>
         }
       </div>
