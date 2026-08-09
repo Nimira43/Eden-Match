@@ -4,30 +4,32 @@
   </div>
   <div class="card-body w-full">
     <form 
-      #registerForm="ngForm"
+      [formGroup]="registerForm"
       class="flex flex-col gap-4 w-full"
       (ngSubmit)="register()"
     >
       <input 
         class="input input-field focus:border-dark"
-        name="email"
-        [(ngModel)]="creds.email"
+        formControlName="email"
         placeholder="Email"
       />
       <input 
         class="input input-field focus:border-dark"
-        name="displayName"
-        [(ngModel)]="creds.displayName"
-        placeholder="Display Name"
+        formControlName="displayName"
+        placeholder="Display name"
       />
-      <input 
-        type="password"
+      <input
+        type="password" 
         class="input input-field focus:border-dark"
-        name="password"
-        [(ngModel)]="creds.password"
+        formControlName="password"
         placeholder="Password"
       />
-      
+      <input
+        type="password" 
+        class="input input-field focus:border-dark"
+        formControlName="confirmPassword"
+        placeholder="Confirm password"
+      />    
       <div class="flex items-center justify-end gap-3">
         <button 
           (click)="cancel()"
@@ -43,6 +45,10 @@
           Register
         </button>
       </div>
-  </form>
+    </form>
+  </div>
+  <div class="flex flex-col w-full px-3 mockup-code text-xs">
+    <div>Form value: {{registerForm.value | json}}</div>
+    <div>Form status: {{registerForm.status | json}}</div>
   </div>
 </div>
