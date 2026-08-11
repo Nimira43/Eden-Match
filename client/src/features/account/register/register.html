@@ -39,6 +39,7 @@
           Cancel
         </button>
         <button 
+        [disabled]="!registerForm.valid"
           type="submit"
           class="btn dark-button"
         >
