@@ -12,12 +12,20 @@
         class="input input-field focus:border-dark"
         formControlName="email"
         placeholder="Email"
-      />
+      />        
+      
+   
       <input 
-        class="input input-field focus:border-dark"
+        class="input w-full"
+        [class.input-error]="
+          registerForm.controls['displayName'].invalid && 
+          registerForm.controls['displayName'].touched
+        "
         formControlName="displayName"
         placeholder="Display name"
       />
+      
+
       <input
         type="password" 
         class="input input-field focus:border-dark"
