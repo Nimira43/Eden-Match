@@ -5,38 +5,26 @@
   <div class="card-body w-full">
     <form 
       [formGroup]="registerForm"
-      class="flex flex-col gap-4 w-full"
+      class="flex flex-col gap-3 w-full"
       (ngSubmit)="register()"
-    >
-      <input 
-        class="input input-field focus:border-dark"
+    >      
+      <app-text-input 
+        label="Email"
         formControlName="email"
-        placeholder="Email"
-      />        
-      
-   
-      <input 
-        class="input w-full"
-        [class.input-error]="
-          registerForm.controls['displayName'].invalid && 
-          registerForm.controls['displayName'].touched
-        "
+      />
+      <app-text-input 
+        label="Display Name"
         formControlName="displayName"
-        placeholder="Display name"
-      />
-      
-
-      <input
-        type="password" 
-        class="input input-field focus:border-dark"
+      />    
+      <app-text-input 
+        label="Password"
         formControlName="password"
-        placeholder="Password"
-      />
-      <input
-        type="password" 
-        class="input input-field focus:border-dark"
+        type="password"
+      />    
+      <app-text-input 
+        label="Confirm Password"
         formControlName="confirmPassword"
-        placeholder="Confirm password"
+        type="password"
       />    
       <div class="flex items-center justify-end gap-3">
         <button 
