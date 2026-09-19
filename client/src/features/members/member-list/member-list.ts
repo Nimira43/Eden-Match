@@ -1,3 +1,4 @@
+import { PaginatedResult } from './../../../types/pagination';
 import { Component, inject } from '@angular/core'
 import { MemberService } from '../../../core/services/member-service'
 import { Observable } from 'rxjs'
@@ -13,9 +14,9 @@ import { MemberCard } from "../member-card/member-card";
 })
 export class MemberList {
   private memberService = inject(MemberService)
-  protected members$: Observable<Member[]>
+  protected paginatedMembers$: Observable<PaginatedResult<Member>>
 
   constructor() {
-    this.members$ = this.memberService.getMembers()
+    this.paginatedMembers$ = this.memberService.getMembers()
   }
 }
