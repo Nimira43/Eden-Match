@@ -22,14 +22,14 @@
       [disabled]="pageNumber() === 1"
       (click)="onPageChange(pageNumber() - 1)"
     >
-      @larr;
+      &larr;
     </button>
     <button
       class="btn btn-circle btn-ghost"
-      [disabled]="pageNumber() === 1"
+      [disabled]="pageNumber() >= totalPages()"
       (click)="onPageChange(pageNumber() + 1)"
     >
-      @rarr;
+      &rarr;
     </button>
   </div>
 </div>
