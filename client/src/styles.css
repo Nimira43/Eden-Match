@@ -4,14 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --main-light: #a7cbfd;
+  --main-dark: #00005c;
+  --transitioning: all 0.5s ease-in-out;
+}
+
+:root:has(.modal[open], .modal-open, .modal:target, .modal-toggle:checked) {
+  scrollbar-gutter: auto !important;
+}
+
+
 * {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
 
-.logo-font {
-  font-family: 'Caveat Brush', cursive;
-}
 
 textarea:focus,
 textarea:active,
@@ -24,8 +32,23 @@ button {
   font-weight: 500 !important;
 }
 
+.logo-font {
+  font-family: 'Caveat Brush', cursive;
+}
+
 .hover-transition {
-  transition: all 0.5s ease-in-out;
+  transition: var(--transitioning);
+}
+
+.special-button {
+  color: var(--main-dark) !important;
+  background-color: var(--main-light) !important; 
+  transition: var(--transitioning);
+} 
+
+.special-button:hover {
+  color: var(--main-light) !important;
+ background-color: var(--main-dark) !important; 
 }
 
 .input-field {
@@ -47,4 +70,3 @@ button {
 .nav-link {
   @apply hover:text-main font-medium hover-transition;
 }
-

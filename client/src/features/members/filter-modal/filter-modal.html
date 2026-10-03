@@ -2,13 +2,66 @@
   #filterModal
   class="modal"
 >
-  <div class="modal-box">
+  <div class="modal-box max-w-lg">
     <h3 class="text-lg font-medium">
-      Modal
+      Select Filters
     </h3>
-    <p class="py-4">
-      Lorem ipsum dolor sit amet consectetur.
-    </p>
+    <div class="flex justify-between w-full items-center mt-6">
+      <div class="flex flex-col w-full gap-6">
+        <div class="flex justify-between items-center">
+          <span class="font-medium">
+            Select Gender:
+          </span>
+          <div class="flex gap-2">
+            @if (memberParams.gender) {
+              <button
+                type="button"
+                class="btn special-button"
+                (click)="memberParams.gender = ''"
+              >
+                ✕
+              </button>
+            }
+            @for (g of genders; track g.value) {
+              @if (!memberParams.gender || memberParams.gender === g.value) {
+                <input
+                  type="radio"
+                  class="btn special-button"
+                  name="gender"
+                  [value]="g.value"
+                  [attr.aria-label]="g.label"
+                  [(ngModel)]="memberParams.gender"
+                >
+              }
+            }
+          </div>
+        </div>
+        <label class="flex justify-between items-center">
+          <span class="font-medium">
+            Select Age
+          </span>
+          <div class="flex gap-3">
+            <input 
+              type="number"
+              class="input w-20"
+              [min]="18"
+              [(ngModel)]="memberParams.minAge"
+              name="minAge"
+              (change)="onMinAgeChange()"
+            >
+            <input 
+              type="number"
+              class="input w-20"
+              [min]="memberParams.minAge || 18"
+              [(ngModel)]="memberParams.maxAge"
+              name="maxAge"
+              (change)="onMaxAgeChange()"
+            >
+          </div>
+        </label>
+      </div>
+    </div>
+
     <div class="modal-action">        
       <button 
         (click)="submit()"
@@ -27,3 +80,33 @@
     </button>
   </form>
 </dialog>
+
+<!-- Not used -->
+<!-- <label class="flex justify-between items-center">
+  <span class="font-medium">
+    Select Gender:
+  </span>
+  <form class="filter">
+    <input 
+      type="reset"
+      value="x"
+      class="btn special-button"
+    >
+    <input 
+      type="radio"
+      class="btn special-button"
+      [(ngModel)]="memberParams.gender"
+      aria-label="Male"
+      name="gender"
+      value="male"
+    >
+    <input 
+      type="radio"
+      class="btn special-button"
+      [(ngModel)]="memberParams.gender"
+      aria-label="Female"
+      name="gender"
+      value="female"
+    >
+  </form>
+</label> -->
