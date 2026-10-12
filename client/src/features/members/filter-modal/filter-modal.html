@@ -59,6 +59,25 @@
             >
           </div>
         </label>
+        <label class="flex justify-between items-center">
+          <span class="font-medium">
+            Order By: 
+          </span>
+          <select 
+            name="orderBy" 
+            class="select"
+            [(ngModel)]="memberParams.orderBy"
+          >
+            <option
+              disabled
+              selected
+            >
+              Order By:
+            </option>
+            <option value="created">Newest Members</option>
+            <option value="lastActive">Last Active</option>
+          </select>
+        </label>
       </div>
     </div>
 
