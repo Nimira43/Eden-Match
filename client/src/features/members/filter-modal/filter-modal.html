@@ -13,24 +13,24 @@
             Select Gender:
           </span>
           <div class="flex gap-2">
-            @if (memberParams.gender) {
+            @if (memberParams().gender) {
               <button
                 type="button"
                 class="btn special-button"
-                (click)="memberParams.gender = ''"
+                (click)="memberParams().gender = ''"
               >
                 ✕
               </button>
             }
             @for (g of genders; track g.value) {
-              @if (!memberParams.gender || memberParams.gender === g.value) {
+              @if (!memberParams().gender || memberParams().gender === g.value) {
                 <input
                   type="radio"
                   class="btn special-button"
                   name="gender"
                   [value]="g.value"
                   [attr.aria-label]="g.label"
-                  [(ngModel)]="memberParams.gender"
+                  [(ngModel)]="memberParams().gender"
                 >
               }
             }
@@ -45,15 +45,15 @@
               type="number"
               class="input w-20"
               [min]="18"
-              [(ngModel)]="memberParams.minAge"
+              [(ngModel)]="memberParams().minAge"
               name="minAge"
               (change)="onMinAgeChange()"
             >
             <input 
               type="number"
               class="input w-20"
-              [min]="memberParams.minAge || 18"
-              [(ngModel)]="memberParams.maxAge"
+              [min]="memberParams().minAge || 18"
+              [(ngModel)]="memberParams().maxAge"
               name="maxAge"
               (change)="onMaxAgeChange()"
             >
@@ -66,7 +66,7 @@
           <select 
             name="orderBy" 
             class="select"
-            [(ngModel)]="memberParams.orderBy"
+            [(ngModel)]="memberParams().orderBy"
           >
             <option
               disabled
@@ -99,33 +99,3 @@
     </button>
   </form>
 </dialog>
-
-<!-- Not used -->
-<!-- <label class="flex justify-between items-center">
-  <span class="font-medium">
-    Select Gender:
-  </span>
-  <form class="filter">
-    <input 
-      type="reset"
-      value="x"
-      class="btn special-button"
-    >
-    <input 
-      type="radio"
-      class="btn special-button"
-      [(ngModel)]="memberParams.gender"
-      aria-label="Male"
-      name="gender"
-      value="male"
-    >
-    <input 
-      type="radio"
-      class="btn special-button"
-      [(ngModel)]="memberParams.gender"
-      aria-label="Female"
-      name="gender"
-      value="female"
-    >
-  </form>
-</label> -->
